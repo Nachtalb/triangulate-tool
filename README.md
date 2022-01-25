@@ -1,39 +1,33 @@
-Triangulate Tool
-================
+Triangulate Tool CLI
+====================
 
-> Easily convert any image into low-poly art in just a few clicks
+> Easily convert any image into low-poly art
 
-Convert ![](images/in.jpg) to ![](images/out.jpg)
-
-Screenshots
------------
-
-![](images/screenshot1.jpg)
-
-![](images/screenshot2.jpg)
+Convert ![input image](images/gura.jpg) to ![output image](images/gura_out.jpg)
 
 How it works
 ------------
 
-The tool takes in every point that you click and runs a [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) on it. It then averages out the colours in the source image for each triangle in order to generate the low-poly image.
+The tool creates a defined amount of random points and runs a [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+on it. It then averages out the colours in the source image for each triangle in
+order to generate the low-poly image.
 
 Usage
 -----
 
 ```bash
-./triangulate-tool input_image output_image
+./triangulate-tool input_image output_image [total_points] [total_points_per_side]
 ```
 
-Use the opacity bar to switch between the original image and the low-poly image.
-
-Press `s` at any time to save the image, and `q` to quit.
+- `total_points` (default: `100`): `int` of total random points in the image
+- `total_points_per_side` (default: `3`): `int` total points on each edge of the
+  image (does not count towards `total_points`)
 
 Build process
 -------------
 
 ```bash
-mkdir build
-cd build
+mkdir build; cd build
 cmake ..
 make
 ```
@@ -41,8 +35,8 @@ make
 Requirements
 ------------
 
-+ OpenCV 2.x
-+ CMake 2.8 or above
+- OpenCV 2.x  (via apt: `libopencv-dev`)
+- CMake 2.8 or above  (via apt: `cmake`)
 
 License
 -------
