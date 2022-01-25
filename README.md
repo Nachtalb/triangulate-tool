@@ -5,6 +5,8 @@ Triangulate Tool CLI
 
 Convert ![input image](images/gura.jpg) to ![output image](images/gura_out.jpg)
 
+Originaly created by: [jaybosamiya](https://github.com/jaybosamiya/triangulate-tool)
+
 How it works
 ------------
 
