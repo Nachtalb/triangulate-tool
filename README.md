@@ -3,7 +3,7 @@ Triangulate Tool CLI
 
 > Easily convert any image into low-poly art
 
-Convert ![input image](images/gura.jpg) to ![output image](images/gura_out.jpg)
+![before afger](images/gura.jpg)
 
 Originaly created by: [jaybosamiya](https://github.com/jaybosamiya/triangulate-tool)
 
