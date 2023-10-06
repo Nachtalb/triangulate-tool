@@ -1,21 +1,20 @@
-Triangulate Tool CLI
-====================
+# Triangulate Tool CLI
 
 > Easily convert any image into low-poly art
 
 ![before afger](images/gura.jpg)
 
-Originaly created by: [jaybosamiya](https://github.com/jaybosamiya/triangulate-tool)
+Originaly created by:
+[jaybosamiya](https://github.com/jaybosamiya/triangulate-tool)
 
-How it works
-------------
+## How it works
 
-The tool creates a defined amount of random points and runs a [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+The tool creates a defined amount of random points and runs a
+[Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
 on it. It then averages out the colours in the source image for each triangle in
 order to generate the low-poly image.
 
-Usage
------
+## Usage
 
 ```bash
 ./triangulate-tool input_image output_image [total_points] [total_points_per_side]
@@ -25,22 +24,24 @@ Usage
 - `total_points_per_side` (default: `3`): `int` total points on each edge of the
   image (does not count towards `total_points`)
 
-Build process
--------------
+## Build process
 
-```bash
-mkdir build; cd build
-cmake ..
-make
+```sh
+./build.sh
 ```
 
-Requirements
-------------
+or manually
 
-- OpenCV 2.x  (via apt: `libopencv-dev`)
-- CMake 2.8 or above  (via apt: `cmake`)
+```sh
+gcc triangulate-tool.cpp -o triangulate-tool $(pkg-config --cflags-only-I opencv4) -lopencv_core -lopencv_imgcodecs -lopencv_imgproc
+```
 
-License
--------
+## Requirements
 
-This software is licensed under the [MIT License](http://jay.mit-license.org/2015)
+- OpenCV 4.x (`sudo pacman -Sy opencv`)
+- A C++ compiler like `gcc` (`sudo pacman -Sy gcc`)
+
+## License
+
+This project is licensed under the
+[GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
